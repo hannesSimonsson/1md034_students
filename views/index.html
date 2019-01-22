@@ -1,9 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>DELI-VERY</title>
+        <title>BurgerOnline</title>
+        <meta charset="utf-8"/>
     </head>
     <body>
-        <h1>Hello World!!!</h1>
+        <main>
+            <h1>Welcome to BurgerOnline</h1>
+
+            <section id="Select burger">
+                <h2>Select burger</h2>
+                <p>This is where you execute burger selection</p>
+
+                <!--Hamburger info-->
+                <table>
+                    <thead>
+                        <th><h3>The Fire Burger</h3></th>
+                        <th><h3>Fried Turkey Burger</h3></th>
+                        <th><h3>A Double w/ Cheese</h3></th>
+                    </thead>
+                    <tbody align="center">
+                        <tr>
+                            <td><img src="https://order.redrobinpa.com/usercontent/product_sub_img/Bacon_Chsburger_Burger.png" alt="FB" title="The Fire Burger" width="200"></td>
+                            <td><img src="https://www.menshealth.com.sg/sites/default/files/oimg/shared/weightloss-nutrition/CharbroiledTurkey_CJ.jpg" alt="FTB" title="Fried Turkey Burger" width="200"></td>
+                            <td><img src="https://www.dairyqueen.com/Global/Food/Burger_Original-Double_1-Cheese-Slice_470x500.jpg?width=&height=810" alt="DWC" title="A Double w/ Cheese" width="200"></td>
+                        </tr>
+                        <tr align="left">
+                            <td>
+                                <ul>
+                                    <li>Kobe beef of the highest quality</li>
+                                    <li>Covered in fancy cheese (contains lactose)</li>
+                                    <li>Cold-leavened sourdough bread (contains gluten)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Deep fried Turkish turkey</li>
+                                    <li>A slice of pink stuff (contains lactose)</li>
+                                    <li>Shake-n-bake gluten-free bread</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Two layers of pure meat</li>
+                                    <li>Lots of yummy cheese (contains lactose)</li>
+                                    <li>Sweet bread bun (contains gluten)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                </table>
+            </section>
+
+            <section id="customer information">
+                <h2>Customer information</h2>
+                <p>This is where you provide necessary information</p> 
+
+                <h3>Delivery information:</h3>
+                <form>
+                    <!--Customer info-->
+                    <p>
+                    <label for="full">Full name</label><br>
+                    <input type="text" id="full" name="fn" required="required" placeholder="First- and Last name">
+                    </p>
+                    <p>
+                    <label for="email">E-mail</label><br>
+                    <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+                    </p>
+                    <p>
+                    <label for="street">Street</label><br>
+                    <input type="text" id="street" name="st" required="required" placeholder="Street name">
+                    </p>
+                    <p>
+                    <label for="house">House</label><br>
+                    <input type="number" id="house" name="ho" required="required" placeholder="House number">    
+                    </p>
+
+                    <!--payment info-->
+                    <p>
+                    <label for="payment">Payment options</label><br>
+                    <select id="payment" name="pay">
+                        <option>Creadit card</option>
+                        <option>Cash</option>
+                        <option>Wire transfer</option>
+                        <option>Swish</option>
+                    </select>
+                    </p>
+
+                    <!--Gender info-->
+                    <label for="gender">Gender</label><br>
+                    <input type="radio" id="gender" name="ge" required="required" placeholder="gender">
+                    <label for="gender">Male</label><br>
+                    <input type="radio" id="gender" name="ge" required="required">
+                    <label for="gender">Female</label><br>
+                    <input type="radio" id="gender" name="ge" required="required">
+                    <label for="gender">Non-binary</label><br>
+                    <input type="radio" id="gender" name="ge" required="required" checked="checked">
+                    <label for="gender">Undisclosed</label><br>
+                </form>  
+            </section>
+
+            <br>   
+            <button type="submit"><img src="https://cdn2.iconfinder.com/data/icons/food-restaurant-1/128/flat-51-512.png" width="20"> Place my order!</button>
+        </main>
+
+        <br>
+        <footer>
+            <hr>
+            &copy;2019 Hypothtical Burgers Inc.
+        </footer>
     </body>
 </html>
