@@ -5,6 +5,10 @@
         <meta charset="utf-8"/>
 
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script src="js/js_script.js" defer></script>
+        <script src="https://vuejs.org/js/vue.js"></script>
+        <script src="js/vue_script.js" defer></script> 
     </head>
     <body>
         <main>
@@ -12,7 +16,7 @@
 
             <!--Banner-->
             <div id="banner">
-                <img src="https://icase.azureedge.net/imagevaultfiles/id_137883/cf_259/artikel-bg-1920x540.jpg?" alt="Banner" title="Banner">
+                <img src="img/banner.jpg" alt="Burger Heaven" title="Burger Heaven">
                 <h1><a>Hamburger Heaven</a></h1>
             </div>
 
@@ -21,38 +25,8 @@
                 <h2>Select burger</h2>
                 <p>This is where you execute burger selection</p>
 
-                <div class="wrapper">
-                    <div class="header a"><h3>The Fire Burger</h3></div>
-                    <div class="header b"><h3>Fried Turkey Burger</h3></div>
-                    <div class="header c"><h3>A Double w/ Cheese</h3></div>
 
-                    <!--TODO download images-->
-                    <div class="image d"><img src="https://order.redrobinpa.com/usercontent/product_sub_img/Bacon_Chsburger_Burger.png" alt="FB" title="The Fire Burger"></div>
-                    <div class="image e"><img src="https://www.menshealth.com.sg/sites/default/files/oimg/shared/weightloss-nutrition/CharbroiledTurkey_CJ.jpg" alt="FTB" title="Fried Turkey Burger"></div>
-                    <div class="image f"><img src="https://www.chewboom.com/wp-content/uploads/2016/05/Carl%E2%80%99s-Jr.-debuts-the-California-Classic-Double-Cheeseburger-nationwide-678x381.jpg" alt="DWC" title="A Double w/ Cheese"></div>
-
-                    <div class="box g">
-                        <ul>
-                            <li>Kobe beef of the highest quality</li>
-                            <li>Covered in fancy cheese <span id="bold">(contains lactose)</span></li>
-                            <li>Cold-leavened sourdough bread <span id="bold">(contains gluten)</span></li>
-                        </ul>
-                    </div>
-                    <div class="box h">
-                        <ul>
-                            <li>Deep fried Turkish turkey</li>
-                            <li>A slice of pink stuff <span id="bold">(contains lactose)</span></li>
-                            <li>Shake-n-bake gluten-free bread</li>
-                        </ul>
-                    </div>
-                    <div class="box i">
-                        <ul>
-                            <li>Two layers of pure meat</li>
-                            <li>Lots of yummy cheese <span id="bold">(contains lactose)</span></li>
-                            <li>Sweet bread bun <span id="bold">(contains gluten)</span></li>
-                        </ul>
-                    </div>
-
+                <div id="wrapper" class="wrapper" v-on:click = "checked">
                 </div>
 
             </section>
@@ -93,20 +67,31 @@
                     </p>
 
                     <!--Gender info-->
+                    <div id=gender>
                     <label for="gender">Gender</label><br>
-                    <input type="radio" id="gender" name="ge" required="required" placeholder="gender">
+                    <input type="radio" id=r1 name="ge" value="Male" required="required" placeholder="gender">
                     <label for="gender">Male</label><br>
-                    <input type="radio" id="gender" name="ge" required="required">
+                    <input type="radio" id=r2 name="ge" value="Female" required="required">
                     <label for="gender">Female</label><br>
-                    <input type="radio" id="gender" name="ge" required="required">
+                    <input type="radio" id=r3 name="ge" value="Non-binary" required="required">
                     <label for="gender">Non-binary</label><br>
-                    <input type="radio" id="gender" name="ge" required="required" checked="checked">
+                    <input type="radio" id=r4 name="ge" value="Undisclosed" required="required" checked="checked">
                     <label for="gender">Undisclosed</label>
+                    </div>
                 </form>  
             </section>
 
             <!--Order button-->
-            <button type="submit"><img src="https://cdn2.iconfinder.com/data/icons/food-restaurant-1/128/flat-51-512.png" width="20"> Place my order!</button>
+            <div id="orders">
+            <button v-on:click="markDone()" type="submit"><img src="https://cdn2.iconfinder.com/data/icons/food-restaurant-1/128/flat-51-512.png" width="20"> Place my order!</button>
+            </div>
+
+            <div id="orderConfirmation">
+            </div>
+
+            <div id="orderSummary">
+            </div>
+
         </main>
 
         <footer>
