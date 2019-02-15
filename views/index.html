@@ -9,6 +9,10 @@
         <script src="js/js_script.js" defer></script>
         <script src="https://vuejs.org/js/vue.js"></script>
         <script src="js/vue_script.js" defer></script> 
+
+        <link rel="stylesheet" href="css/deli-very.css">
+        <script src="/socket.io/socket.io.js" defer></script>
+        <script src="js/deli-very.js" defer></script>
     </head>
     <body>
         <main>
@@ -26,13 +30,14 @@
                 <p>This is where you execute burger selection</p>
 
 
-                <div id="wrapper" class="wrapper" v-on:click = "checked">
+                <div id="wrapper" class="wrapper"> <!--v-on:click = "checked"-->
                 </div>
 
             </section>
 
             <!--Customer info-->
             <section id="information">
+
                 <h2>Customer information</h2>
                 <p>This is where you provide necessary information</p> 
 
@@ -46,14 +51,17 @@
                     <label for="email">E-mail</label><br>
                     <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
                     </p>
-                    <p>
-                    <label for="street">Street</label><br>
-                    <input type="text" id="street" name="st" required="required" placeholder="Street name">
-                    </p>
-                    <p>
-                    <label for="house">House</label><br>
-                    <input type="number" id="house" name="ho" required="required" placeholder="House number">    
-                    </p>
+
+                    <!--
+                        <p>
+                        <label for="street">Street</label><br>
+                        <input type="text" id="street" name="st" required="required" placeholder="Street name">
+                        </p>
+                        <p>
+                        <label for="house">House</label><br>
+                        <input type="number" id="house" name="ho" required="required" placeholder="House number">    
+                        </p>
+                    -->
 
                     <!--payment info-->
                     <p>
@@ -66,25 +74,37 @@
                     </select>
                     </p>
 
-                    <!--Gender info-->
                     <div id=gender>
-                    <label for="gender">Gender</label><br>
-                    <input type="radio" id=r1 name="ge" value="Male" required="required" placeholder="gender">
-                    <label for="gender">Male</label><br>
-                    <input type="radio" id=r2 name="ge" value="Female" required="required">
-                    <label for="gender">Female</label><br>
-                    <input type="radio" id=r3 name="ge" value="Non-binary" required="required">
-                    <label for="gender">Non-binary</label><br>
-                    <input type="radio" id=r4 name="ge" value="Undisclosed" required="required" checked="checked">
-                    <label for="gender">Undisclosed</label>
+                        <label for="gender">Gender</label><br>
+                        <input type="radio" id=r1 name="ge" value="Male" required="required" placeholder="gender">
+                        <label for="gender">Male</label><br>
+                        <input type="radio" id=r2 name="ge" value="Female" required="required">
+                        <label for="gender">Female</label><br>
+                        <input type="radio" id=r3 name="ge" value="Non-binary" required="required">
+                        <label for="gender">Non-binary</label><br>
+                        <input type="radio" id=r4 name="ge" value="Undisclosed" required="required" checked="checked">
+                        <label for="gender">Undisclosed</label>
                     </div>
                 </form>  
             </section>
 
             <!--Order button-->
-            <div id="orders">
-            <button v-on:click="markDone()" type="submit"><img src="https://cdn2.iconfinder.com/data/icons/food-restaurant-1/128/flat-51-512.png" width="20"> Place my order!</button>
+
+            <h4 style="text-indent:40px">Please select delivery destination.</h4>
+            <div id = "vm">  
+                <div class="view-box">
+                    <div id="dots" v-on:click='displayOrder'>
+
+                        <div v-bind:style="{left: order.x + 'px', top: order.y + 'px'}">
+                            {{"T"}}
+                        </div>
+                    </div>
+                </div>
+                <div id="orders">
+                    <button v-on:click="addOrder" type="submit"><img src="https://cdn2.iconfinder.com/data/icons/food-restaurant-1/128/flat-51-512.png" width="20"> Place my order!</button>
+                </div>
             </div>
+
 
             <div id="orderConfirmation">
             </div>

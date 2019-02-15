@@ -1,15 +1,4 @@
-new Vue({
-    el: '#orders',
-    methods: {
-        markDone: function() {
-             document.getElementById("orderConfirmation").innerHTML = "";
-             info();
-             console.log("Button pushed!");
-        }
-    }
-});
-
-new Vue({
+/*new Vue({
     el: '#wrapper',
     methods: {
         checked: function() {
@@ -18,4 +7,4 @@ new Vue({
             console.log("Checked");
         }
     }
-});
+});*/

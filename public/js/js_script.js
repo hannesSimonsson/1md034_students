@@ -87,8 +87,8 @@ function info() {
     var customerInfo = [
         document.getElementById("full").value,
         document.getElementById("email").value,
-        document.getElementById("street").value,
-        document.getElementById("house").value,
+        /*document.getElementById("street").value,
+        document.getElementById("house").value,*/
         document.getElementById("payment").value,
         radioValue
     ]
@@ -113,12 +113,14 @@ function info() {
         text.appendChild(values);
         text.appendChild(document.createElement("br"));
     }
+
+    return customerInfo;
 }
 
 function summary() {
     if (document.getElementById("c0").checked || 
-        document.getElementById("c0").checked || 
-        document.getElementById("c0").checkedi) {
+        document.getElementById("c1").checked || 
+        document.getElementById("c2").checked) {
         var sum = document.getElementById("orderSummary");
         var heading = document.createElement("h3");
         sum.appendChild(heading)
@@ -130,22 +132,32 @@ function summary() {
         sum.appendChild(list);
     }
 
+    var hamburger = [];
+
     if (document.getElementById("c0").checked) {
         var listItem = document.createElement("li");
         list.appendChild(listItem);
 
         listItem.appendChild(document.createTextNode(document.getElementById("c0").value));
+
+        hamburger.push(document.getElementById("c0").value);
     }
     if (document.getElementById("c1").checked) {
         var listItem = document.createElement("li");
         list.appendChild(listItem);
 
         listItem.appendChild(document.createTextNode(document.getElementById("c1").value));
+
+        hamburger.push(document.getElementById("c1").value);
     }
     if (document.getElementById("c2").checked) {
         var listItem = document.createElement("li");
         list.appendChild(listItem);
 
         listItem.appendChild(document.createTextNode(document.getElementById("c2").value));
+
+        hamburger.push(document.getElementById("c2").value);
     }
+
+    return hamburger;
 }
